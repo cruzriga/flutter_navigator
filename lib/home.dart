@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutternavigator/screens/contacts.dart';
 class Home extends StatelessWidget {
   static const String routeName = '/';
   @override
@@ -9,6 +9,11 @@ class Home extends StatelessWidget {
       child: ListView(
         children: <Widget>[
           DrawerHeader(child: Text('Ajustes', style: TextStyle(fontSize: 20.0))),
+          ListTile(
+              leading: Icon(Icons.contacts),
+              title: Text('Contactos'),
+              onTap: (){Navigator.pushNamed(context, '/contactos');}
+          ),
           ListTile(
               leading: Icon(Icons.settings),
               title: Text('Configuración'),

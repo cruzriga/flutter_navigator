@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutternavigator/home.dart';
 import 'package:flutternavigator/screens/battery.dart';
+import 'package:flutternavigator/screens/contacts.dart';
 import 'package:flutternavigator/screens/settigns.dart';
 
 void main() {
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Home(),
       routes: <String, WidgetBuilder> {
+        Contacts.routeName: (BuildContext context) =>  Contacts(),
         Settings.routeName: (BuildContext context) =>  Settings(),
         Battery.routeName: (BuildContext context) =>  Battery()
       },
