@@ -8,7 +8,12 @@ class Home extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: <Widget>[
-          DrawerHeader(child: Text('Ajustes', style: TextStyle(fontSize: 20.0))),
+          DrawerHeader(
+              decoration: BoxDecoration(color: Colors.blueGrey),
+              child: Text('Ajustes',
+                  style: TextStyle(fontSize: 20.0, color: Colors.white)
+              )
+          ),
           ListTile(
               leading: Icon(Icons.contacts),
               title: Text('Contactos'),
@@ -43,10 +48,62 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Página principal')
+          title: Text('Página principal'),
+          backgroundColor: Colors.blueGrey,
         ),
         drawer: main_menu(context),
-        body: Text('Home')
+        body: ListView(
+          children: <Widget>[
+            Card(
+              child: ListTile(
+                  leading: Icon(Icons.playlist_play),
+                  title: Text('Infinite Scroll'),
+                  trailing: Icon(Icons.chevron_right),
+                  onTap: (){Navigator.pushNamed(context, '/infinite_scroll');}
+              ),
+            ),
+            Card(
+              child: ListTile(
+                  leading: Icon(Icons.playlist_play),
+                  title: Text('PageView Simple'),
+                  trailing: Icon(Icons.chevron_right),
+                  onTap: (){Navigator.pushNamed(context, '/page_view_simple');}
+              ),
+            ),
+            Card(
+              child: ListTile(
+                  leading: Icon(Icons.playlist_play),
+                  title: Text('PageView Infinite'),
+                  trailing: Icon(Icons.chevron_right),
+                  onTap: (){Navigator.pushNamed(context, '/page_view_infinite');}
+              ),
+            ),
+            Card(
+              child: ListTile(
+                  leading: Icon(Icons.contacts),
+                  title: Text('Contactos'),
+                  trailing: Icon(Icons.chevron_right),
+                  onTap: (){Navigator.pushNamed(context, '/contactos');}
+              ),
+            ),
+            Card(
+              child: ListTile(
+                  leading: Icon(Icons.settings),
+                  title: Text('Configuración'),
+                  trailing: Icon(Icons.chevron_right),
+                  onTap: (){Navigator.pushNamed(context, '/configuracion');}
+              ),
+            ),
+            Card(
+              child: ListTile(
+                  leading: Icon(Icons.battery_unknown),
+                  title: Text('Batería'),
+                  trailing: Icon(Icons.chevron_right),
+                  onTap: (){Navigator.pushNamed(context, '/bateria');}
+              ),
+            ),
+          ],
+        )
     );
   }
 }

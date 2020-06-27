@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutternavigator/home.dart';
 import 'package:flutternavigator/screens/battery.dart';
 import 'package:flutternavigator/screens/contacts.dart';
+import 'package:flutternavigator/screens/page_view_simple.dart';
 import 'package:flutternavigator/screens/settigns.dart';
+import 'package:flutternavigator/screens/infinite_scroll.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,6 +34,9 @@ class MyApp extends StatelessWidget {
       ),
       home: Home(),
       routes: <String, WidgetBuilder> {
+        '/infinite_scroll': (BuildContext context) => InfiniteScroll(),
+        '/page_view_simple' : (BuildContext context) => PageViewSimple(),
+        '/page_view_infinite' : (BuildContext context) => PageViewInfinite(),
         Contacts.routeName: (BuildContext context) =>  Contacts(),
         Settings.routeName: (BuildContext context) =>  Settings(),
         Battery.routeName: (BuildContext context) =>  Battery()
