@@ -20,17 +20,7 @@ class _InfiniteScrollState extends State<InfiniteScroll> {
                 onPressed: ()=>{
                   Navigator.push(context, MaterialPageRoute(
                       builder: (context){
-                        return Scaffold(
-                            appBar: AppBar(
-                              title: Text('Items Guardados'),
-                            ),
-                            body: ListView(
-                              children: saved.map<ListTile>((pair)=>ListTile(
-                                title: Text(pair.asPascalCase),
-                                trailing: Icon(Icons.favorite, color: Colors.red,),
-                              )).toList(),
-                            )
-                        );
+                        return InfiniteScrollSubPage(pairs: saved);
                       })
                   )
                 },
@@ -54,3 +44,23 @@ class _InfiniteScrollState extends State<InfiniteScroll> {
     );
   }
 }
+
+class InfiniteScrollSubPage extends StatelessWidget {
+  final pairs;
+  InfiniteScrollSubPage({this.pairs});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Items Guardados'),
+        ),
+        body: ListView(
+          children: pairs.map<ListTile>((pair)=>ListTile(
+            title: Text(pair.asPascalCase),
+            trailing: Icon(Icons.favorite, color: Colors.red,),
+          )).toList(),
+        )
+    );
+  }
+}
+
