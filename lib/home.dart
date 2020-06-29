@@ -56,6 +56,14 @@ class Home extends StatelessWidget {
           children: <Widget>[
             Card(
               child: ListTile(
+                  leading: Icon(Icons.description),
+                  title: Text('2. Json List'),
+                  trailing: Icon(Icons.chevron_right),
+                  onTap: (){Navigator.pushNamed(context, '/list_json');}
+              ),
+            ),
+            Card(
+              child: ListTile(
                   leading: Icon(Icons.playlist_play),
                   title: Text('Infinite Scroll'),
                   trailing: Icon(Icons.chevron_right),
