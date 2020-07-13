@@ -3,7 +3,7 @@ import 'package:flutternavigator/home.dart';
 import 'package:flutternavigator/routes.dart';
 import 'package:flutternavigator/segundo/alert_page.dart';
 
-
+//todo: https://github.com/diegoveloper/flutter-samples
 void main() {
   runApp(MyApp());
 }
@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Navigator test app',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: (RouteSettings settings){
         print('Ruta llamada ${settings.name}');
         return MaterialPageRoute(
-          builder: (BuildContext contex) => AlertPage()
+          builder: (BuildContext contex) => Home()
         );
       },
     );
