@@ -8,6 +8,7 @@ import 'package:flutternavigator/screens/page_view_simple.dart';
 import 'package:flutternavigator/screens/settigns.dart';
 import 'package:flutternavigator/segundo/alert_page.dart';
 import 'package:flutternavigator/segundo/avatar_page.dart';
+import 'package:flutternavigator/segundo/card_page.dart';
 import 'package:flutternavigator/segundo/list_json.dart';
 
 Map<String, WidgetBuilder> getAppRoutes() {
@@ -17,6 +18,7 @@ Map<String, WidgetBuilder> getAppRoutes() {
     '/list_json'        : (BuildContext context) => ListJson(),
     '/list_json/alert'  : (BuildContext context) => AlertPage(),
     '/list_json/avatar' : (BuildContext context) => AvatarPage(),
+    '/list_json/card'   : (BuildContext context) => CardPage(),
     '/infinite_scroll'  : (BuildContext context) => InfiniteScroll(),
     '/page_view_simple' : (BuildContext context) => PageViewSimple(),
     '/page_view_infinite': (BuildContext context)=> PageViewInfinite(),
